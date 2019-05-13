@@ -1,4 +1,4 @@
-import candyReducer from "./candyReducer";
+import { candyReducer } from "./candyReducer";
 import { combineReducers } from "redux";
 
 const initialState = {};

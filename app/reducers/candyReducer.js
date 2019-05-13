@@ -1,4 +1,6 @@
-const initialState = {};
+import {dummyData} from '../DummyData'
+
+const initialState = dummyData
 
 const candyReducer = (state = initialState, action) => {
   switch (action.type) {

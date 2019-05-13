@@ -1,5 +1,5 @@
 import React from 'react'
-import CandyList from './CandyList'
+import {CandyList} from './CandyList'
 
 const Root = () => {
   return (

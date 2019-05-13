@@ -6,5 +6,5 @@ module.exports = db.define("candy", {
   name: { type: Sequelize.STRING, allowNull: false },
   description: { type: Sequelize.TEXT, allowNull: false },
   quantity: { type: Sequelize.INTEGER, validate: { max: 10 } },
-  imgUrl: { type: Sequelize.TEXT, defaultValue: "DEFUALT URL" }
+  imageUrl: { type: Sequelize.TEXT, defaultValue: "DEFUALT URL" }
 });

@@ -6,10 +6,13 @@ import { dummyData } from '../DummyData'
 const DCCandyList = props => {
   return (
     <div className="all-the-candies">
-      <h3> CANDY!!</h3>
+      <h2> CANDY!!</h2>
       <ul>
         {props.candyList.map((Candy, index) => {
-          return <li key={index}>{Candy.name}</li>;
+          return <li key={index}>
+          <h3>{Candy.name}</h3>
+          <img src={Candy.imageUrl} />
+          </li>;
         })}
       </ul>
     </div>

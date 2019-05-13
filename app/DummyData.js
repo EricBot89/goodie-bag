@@ -1,7 +1,7 @@
 //dummy data taken from my api route after seeding
 
 const dummyData = {
-  candies: [
+  candy: [
     {
       id: 1,
       name: "Skittles",

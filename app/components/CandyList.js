@@ -7,7 +7,7 @@ const DCCandyList = props => {
     <div className="all-the-candies">
       <h3> CANDY!!</h3>
       <ul>
-        {dummyData.candies.map((Candy, index) => {
+        {props.candyList.map((Candy, index) => {
           return <li key={index}>Candy.name</li>;
         })}
       </ul>
@@ -16,7 +16,7 @@ const DCCandyList = props => {
 };
 
 const getCandiesFromState = state => ({
-  candyList: state.candy
+  candyList: state.candyReducer.candy
 });
 
 const CandyList = connect(

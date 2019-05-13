@@ -12,13 +12,14 @@ const getCandies = candies => {
 };
 
 const getServerCandies = () => {
-  return async (dispatch) => {
+  return async dispatch => {
     try {
-      const response = axios.get("/api/candy");
+      const response = await axios.get("/api/candy");
       const candyData = response.data;
+      console.log(response,candyData);
       dispatch(getCandies(candyData));
     } catch (err) {
-      //DO SOMETHING HERE MAYBE?
+      console.log(err)
     }
   };
 };

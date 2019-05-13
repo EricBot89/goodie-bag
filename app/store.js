@@ -8,6 +8,19 @@ import thunkMiddleware from 'redux-thunk' // https://github.com/gaearon/redux-th
 
 const getCandies = (candies) => {return {type: REQUEST_CANDIES, candies}}
 
+const getServerCandies = () => {
+  return async () => {
+    try{
+    const response = axios.get('/api/candy');
+    const candyData = response.data;
+    return getCandies(candyData)
+    } catch (err) {
+    //DO SOMETHING HERE MAYBE?
+    }
+  }
+}
+
+
 const loggingMiddleware = ({dispatch, getState }) => {
   return next => action => {
     console.log(getState())
@@ -27,4 +40,4 @@ const candyStore = createStore(
 )
 
 
-export {candyStore}
+export {candyStore, getServerCandies}

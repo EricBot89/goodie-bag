@@ -1,7 +1,15 @@
 import React from 'react'
 import {CandyList} from './CandyList'
+import { getServerCandies } from '../store'
+import {connect} from 'react-redux'
 
-const Root = () => {
+class DCRoot extends React.Component {
+
+  componentDidMount () {
+   this.props.sync();
+  }
+
+  render() {
   return (
     <div>
       <nav>
@@ -14,6 +22,13 @@ const Root = () => {
       </main>
     </div>
   )
+  }
 }
 
-export default Root
+const syncStoreToServer = disptach => ({
+  sync: () => disptach(getServerCandies())
+});
+
+const Root = connect(null,syncStoreToServer)(DCRoot);
+
+export { Root }

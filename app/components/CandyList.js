@@ -8,7 +8,7 @@ const DCCandyList = props => {
       <h3> CANDY!!</h3>
       <ul>
         {props.candyList.map((Candy, index) => {
-          return <li key={index}>Candy.name</li>;
+          return <li key={index}>{Candy.name}</li>;
         })}
       </ul>
     </div>

@@ -6,6 +6,8 @@ import {rootReducer} from './reducers'
 import thunkMiddleware from 'redux-thunk' // https://github.com/gaearon/redux-thunk
 
 
+const getCandies = (candies) => {return {type: REQUEST_CANDIES, candies}}
+
 const loggingMiddleware = ({dispatch, getState }) => {
   return next => action => {
     console.log(getState())
